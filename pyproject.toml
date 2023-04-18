@@ -1,0 +1,49 @@
+[tool.ruff]
+line-length = 120
+select = ["D", "E", "F"]
+target-version = "py38"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '''
+(
+      \.pyi?$
+    | \.py?$
+    | ^/tests/
+    | ^/src/
+)
+'''
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | __pycache__
+    | buck-out
+    | build
+    | dist
+    | .*/migrations
+    | \.github
+    | ci
+    | node_modules
+    | static
+    | staticfiles
+  )/
+  | \.html
+  | \.js
+  | \.css
+  | \.scss
+)
+'''
